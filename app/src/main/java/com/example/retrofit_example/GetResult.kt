@@ -3,8 +3,13 @@ package com.example.retrofit_example
 import com.google.gson.annotations.SerializedName
 
 // 2.
-class GetResult {
-    @SerializedName("userId")
+data class GetResult(@SerializedName("userId") var userId : Int,
+                     @SerializedName("id") var id : Int,
+                     var title : String,
+                     @SerializedName("body") var body : String) {
+
+    /*
+      @SerializedName("userId")
     private var userId = 0
 
     @SerializedName("id")
@@ -27,8 +32,11 @@ class GetResult {
                 ", bodyValue='" + bodyValue + '\'' +
                 '}'
     }
+     */
 
-
+    fun idgetter(): Int {
+        return userId
+    }
 
 }
 
